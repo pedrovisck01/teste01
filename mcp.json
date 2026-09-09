@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "sap-pedro": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "arc-1@latest"],
+      "env": {
+        "SAP_URL": "${SAP_URL}",
+        "SAP_USER": "${SAP_USER}",
+        "SAP_PASSWORD": "${SAP_PASSWORD}",
+        "SAP_CLIENT": "${SAP_CLIENT:-100}",
+        "SAP_LANGUAGE": "${SAP_LANGUAGE:-EN}",
+        "SAP_INSECURE": "${SAP_INSECURE:-false}",
+        "SAP_ALLOW_WRITES": "${SAP_ALLOW_WRITES:-false}"
+      }
+    }
+  }
+}
