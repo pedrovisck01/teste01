@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pedrovisck01/sap-pedro",
+  "title": "SAP Pedro",
+  "description": "MCP server configuration for SAP ABAP systems based on ARC-1",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/pedrovisck01/teste01.git",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "arc-1",
+      "version": "latest",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        { "name": "SAP_URL", "description": "SAP system URL", "isRequired": true },
+        { "name": "SAP_USER", "description": "SAP username", "isRequired": true },
+        { "name": "SAP_PASSWORD", "description": "SAP password", "isRequired": true, "isSecret": true },
+        { "name": "SAP_CLIENT", "description": "SAP client number", "default": "100" },
+        { "name": "SAP_LANGUAGE", "description": "SAP logon language", "default": "EN" },
+        { "name": "SAP_INSECURE", "description": "Skip TLS certificate verification", "default": "false" },
+        { "name": "SAP_ALLOW_WRITES", "description": "Allow ABAP object mutations", "default": "false" }
+      ]
+    }
+  ]
+}
